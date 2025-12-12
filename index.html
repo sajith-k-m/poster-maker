@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NRPF Poster Maker</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Left Panel: Controls -->
+        <aside class="controls-panel">
+            <header>
+                <h1>Poster Maker</h1>
+                <p>Create your refined poster in seconds.</p>
+            </header>
+
+            <!-- Template selection removed per user request -->
+
+            <div class="control-group">
+                <h3>Your Photo</h3>
+                <div class="file-upload-wrapper">
+                    <label for="photoInput" class="custom-file-upload secondary">
+                        Upload Photo
+                    </label>
+                    <input type="file" id="photoInput" accept="image/*">
+                </div>
+                <!-- Photo Adjustments -->
+                <div class="slider-group" id="photoControls" style="display:none;">
+                    <label>Scale <span id="scaleVal">100%</span></label>
+                    <input type="range" id="scaleSlider" min="10" max="300" value="100">
+
+                    <label>Position X</label>
+                    <input type="range" id="posXSlider" min="-500" max="1500" value="0">
+
+                    <label>Position Y</label>
+                    <input type="range" id="posYSlider" min="-500" max="1500" value="0">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>Details</h3>
+                <div class="input-wrapper">
+                    <label>Name</label>
+                    <input type="text" id="nameInput" placeholder="e.g. Abijeeth Satheesh">
+                </div>
+                <div class="input-wrapper">
+                    <label>Unit Number</label>
+                    <div class="input-prefix-group">
+                        <span class="prefix">Unit :</span>
+                        <input type="text" id="unitInput" placeholder="340">
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <label>Date of Birth</label>
+                    <div class="input-prefix-group">
+                        <span class="prefix">DOB :</span>
+                        <input type="text" id="dobInput" placeholder="28/11/2005">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Adjustments removed -->
+
+            <button id="downloadBtn" class="download-btn">
+                Download
+            </button>
+        </aside>
+
+        <!-- Right Panel: Preview -->
+        <main class="preview-panel">
+            <div class="canvas-wrapper">
+                <canvas id="posterCanvas"></canvas>
+                <div id="placeholderText" class="placeholder-msg">
+                    Preview will appear here.<br>
+                    Please upload a template to start.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
